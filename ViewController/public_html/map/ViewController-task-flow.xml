@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="ViewController-task-flow">
+    <default-activity>Map</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name>GeoLoc</managed-bean-name>
+      <managed-bean-class>mobile.POINT</managed-bean-class>
+      <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__4">
+      <managed-bean-name>report</managed-bean-name>
+      <managed-bean-class>mobile.Report</managed-bean-class>
+      <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <view id="Map">
+      <page>/Map.amx</page>
+    </view>
+    <view id="Report">
+      <page>/Report.amx</page>
+    </view>
+    <router id="guide">
+      <case id="__12">
+        <expression>1</expression>
+        <outcome>reportGuided</outcome>
+      </case>
+    </router>
+    <control-flow-rule id="__1">
+      <from-activity-id>Map</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>report</from-outcome>
+        <to-activity-id>Report</to-activity-id>
+        <transition>flipDown</transition>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>reportGuide</from-outcome>
+        <to-activity-id>guide</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>guide</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>reportGuided</from-outcome>
+        <to-activity-id>Report</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.10" id="ReportPageDef"
+                Package="mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Report" id="ReportIterator"/>
+    <accessorIterator MasterBinding="ReportIterator" Binds="reports" RangeSize="10" DataControl="Report"
+                      BeanClass="mobile.Report" id="reportsIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Report" id="ReportIterator1"/>
+    <accessorIterator MasterBinding="ReportIterator1" Binds="reports" RangeSize="10" DataControl="Report"
+                      BeanClass="mobile.Report" id="reportsIterator1"/>
+  </executables>
+  <bindings>
+    <methodAction id="getPicture" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getPicture"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider"
+                  ReturnName="data.DeviceFeatures.methodResults.getPicture_DeviceFeatures_dataProvider_getPicture_result">
+      <NamedData NDName="quality" NDValue="50" NDType="int"/>
+      <NamedData NDName="destinationType" NDType="int"/>
+      <NamedData NDName="sourceType" NDType="int"/>
+      <NamedData NDName="allowEdit" NDType="boolean"/>
+      <NamedData NDName="encodingType" NDType="int"/>
+      <NamedData NDName="targetWidth" NDType="int"/>
+      <NamedData NDName="targetHeight" NDType="int"/>
+    </methodAction>
+    <list ListOperMode="navigation" IterBinding="reportsIterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="reportsIterator1" id="status1">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

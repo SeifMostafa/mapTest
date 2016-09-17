@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.10" id="DataBindings"
+             SeparateXMLFiles="false" Package="mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Map.amx" usageId="mobile_MapPageDef"/>
+    <page path="/Report.amx" usageId="mobile_ReportPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="mobile_MapPageDef" path="mobile.pageDefs.MapPageDef"/>
+    <page id="mobile_ReportPageDef" path="mobile.pageDefs.ReportPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DeviceFeatures" path="application.DeviceFeatures"/>
+    <dc id="Report" path="mobile.Report"/>
+  </dataControlUsages>
+</Application>

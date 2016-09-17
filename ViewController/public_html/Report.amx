@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1" rendered="true">
+        <amx:facet name="header">
+            <amx:outputText value="Incident Report" id="ot1" rendered="true"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" action="__back" rendered="true"/>
+        </amx:facet>
+        <amx:selectOneChoice label="Type" id="choice" rendered="true" required="true">
+            <amx:selectItem id="RoadAccident" value="Road Accident" label="Road Accident"/>
+            <amx:selectItem id="Fire" value="Fire" label="Fire"/>
+            <amx:selectItem id="Crime" value="Crime" label="Crime"/>
+            <amx:selectItem id="Roadbreakdown" value="Road Breakdown" label="Road Breakdown"/>
+            <amx:selectItem id="HealthCare" value="Health Caring" label="Health Caring"/>
+        </amx:selectOneChoice>
+        <amx:inputText label="Description" id="desc" rendered="true" hintText="write Description.." inputType="text"
+                       required="false"/>
+        <amx:commandButton actionListener="#{bindings.getPicture.execute}" text="getPicture"
+                           disabled="#{!bindings.getPicture.enabled}" id="cb2" rendered="true"/>
+        <amx:outputText value="" id="priority"
+                        inlineStyle="overflow-wrap:break-word; text-align:center; position:relative;"
+                        rendered="#{bindings.status==1}"/>
+        <amx:commandButton text="+1" id="inpriority" rendered="#{bindings.status==1}"/>
+            <amx:outputText value="" id="TagSloved" rendered="#{bindings.status==2}"
+                        inlineStyle="overflow-wrap:break-word; text-align:center; position:relative;"/>
+                        <amx:commandButton text="Give feedback" id="feedback"
+                                           rendered="#{bindings.status==2}"/>
+        <amx:outputText value="#{bindings.status1.inputValue}" id="ot2" rendered="true"/>
+    </amx:panelPage>
+</amx:view>

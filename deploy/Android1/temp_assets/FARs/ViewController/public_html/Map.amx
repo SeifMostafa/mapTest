@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <dvtm:geographicMap id="map1" rendered="true">
+      <dvtm:pointDataLayer value="#{bindings.reports.collectionModel}" id="pdl1" var="row">
+        <dvtm:pointLocation pointX="#{row.longitude}" pointY="#{row.latitude}" id="ptl1" type="pointXY">
+          <dvtm:marker id="mrk1" action="reportGuide"/>
+        </dvtm:pointLocation>
+      </dvtm:pointDataLayer>
+      <dvtm:pointDataLayer id="pdl2"  rendered="true" animationOnDataChange="alphaFade">
+       <dvtm:pointLocation 
+      id="pl2" rendered="true" pointY="#{GeoLoc.latitude}" pointX="#{GeoLoc.longitude}" type="pointXY" >
+      <dvtm:marker id="mrk3" rendered="true" source="/image/police.png" action="reportGuide">
+      </dvtm:marker>
+      </dvtm:pointLocation>
+      </dvtm:pointDataLayer>
+    </dvtm:geographicMap>
+  </amx:panelPage>
+</amx:view>
