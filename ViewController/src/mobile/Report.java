@@ -4,7 +4,14 @@ import java.lang.reflect.Type;
 
 import java.util.ArrayList;
 
+import java.util.logging.Logger;
+
+import oracle.adfmf.amx.event.ActionEvent;
+import oracle.adfmf.amx.event.SelectionEvent;
+import oracle.adfmf.bindings.dbf.AmxAttributeBinding;
+import oracle.adfmf.bindings.dbf.AmxBindingContainer;
 import oracle.adfmf.framework.api.AdfmfContainerUtilities;
+import oracle.adfmf.framework.api.AdfmfJavaUtilities;
 import oracle.adfmf.framework.exception.AdfException;
 
 enum TYPE {
@@ -20,6 +27,7 @@ public class Report {
     String description, type, imageUrl;
     double latitude, longitude;
     public String iconUri;
+    private String addReport;
 
     public Report() {
         super();
@@ -165,17 +173,44 @@ public class Report {
         this.iconUri = iconUri;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getIconUri() {
         return iconUri;
-    }
-    public void viewReport(){
-        
     }
     public void CreateReport(){
         
     }
     public boolean CheckIfReportExist() {
         return false;
+    }
+
+    public void getstatus(SelectionEvent selectionEvent) {
+        // Add event code here...
+    }
+
+    public void getStatus(SelectionEvent selectionEvent) {
+        // Add event code here...
+    }
+
+    public void viewReport(ActionEvent actionEvent) {
+        // Add event code here...
+
+    }
+    public String AddReport() {
+        // Add event code here...
+      //  AmxBindingContainer bindings = (AmxBindingContainer) AdfmfJavaUtilities.evaluateELExpression("#{bindings}");
+      //  Object type = bindings.get("type");
+   //    AmxAttributeBinding aab = (AmxAttributeBinding)type;
+        
+        // lan,lot,
+       System.out.print(this.type);
+        System.out.print("HASSAN");
+        
+        return "home" ;
+
     }
 
 }

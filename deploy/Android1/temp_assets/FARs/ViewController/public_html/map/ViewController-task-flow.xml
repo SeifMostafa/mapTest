@@ -43,6 +43,13 @@
         <to-activity-id>Report</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>Report</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>map</from-outcome>
+        <to-activity-id>Map</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <page-flow-scope-behavior>
       <push-new/>
     </page-flow-scope-behavior>

@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="root" RangeSize="25" DataControl="Report" id="ReportIterator"/>
-    <accessorIterator MasterBinding="ReportIterator" Binds="reports" RangeSize="-1" DataControl="Report"
+    <accessorIterator MasterBinding="ReportIterator" Binds="reports" RangeSize="10" DataControl="Report"
                       BeanClass="mobile.Report" id="reportsIterator"/>
   </executables>
   <bindings>
@@ -14,6 +14,7 @@
         <AttrNames>
           <Item Value="latitude"/>
           <Item Value="longitude"/>
+          <Item Value="status"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

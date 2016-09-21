@@ -77,4 +77,14 @@
       <property
          name="sdm:polyPoints">T56,336.5,247.07812,459.0,143.14062,B50</property>
    </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">map</property>
+      <property
+         name="sdm:polyPoints">L54,417.9833,92.640625,215.0,91.671875,R54</property>
+   </ControlFlowCase>
 </SDM>
